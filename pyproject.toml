@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autolayout-cad"
+version = "0.2.0"
+description = "Automated first-pass architectural layout and DXF drafting"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.111",
+  "uvicorn>=0.30",
+  "ezdxf>=1.3",
+  "streamlit>=1.35"
+]
+
+[project.scripts]
+autolayout-cli = "autolayout.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
